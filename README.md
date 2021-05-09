@@ -23,12 +23,10 @@ psql -h hostname -p port -U username databasename
 CREATE DATABASE __database_name__;
 ```
 
-_Text_
+- Delete database:
 
-Text
-
-```java
-
+```
+DROP DATABASE __database_name__;
 ```
 
 ### Placeholder11
