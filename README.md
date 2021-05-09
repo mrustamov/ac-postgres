@@ -9,6 +9,7 @@ Amigoscode Postgres Tutorial Notes
   - [Placeholder11](#Placeholder11)
 - [Placeholder20](#Placeholder20)
   - [Placeholder21](#Placeholder21)
+- [References](#References)
 
 ## Header 1
 
@@ -22,10 +23,6 @@ Text
 
 ```
 
-#### References
-
-[1. source](link)
-
 ### Placeholder11
 
 Placeholder test...
@@ -37,3 +34,7 @@ Placeholder test...
 ### Placeholder21
 
 Placeholder test...
+
+## References
+
+[1. source](link)
