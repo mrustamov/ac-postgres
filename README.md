@@ -1,19 +1,27 @@
 # ac-postgres [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 
-Amigoscode Postgres Tutorial Notes
+Amigoscode's PostgreSQL tutorial notes
 
 ## Contents
 
-- [Header 1](#Header-1)
-  - [JMS Messages over XA](#JMS-Messages-over-XA)
-  - [Placeholder11](#Placeholder11)
+- [Create commands](#Create-commands)
 - [Placeholder20](#Placeholder20)
   - [Placeholder21](#Placeholder21)
 - [References](#References)
 
-## Header 1
+## Create commands
 
-### SubHeader 1
+- Connect to database server using psql command
+
+```
+psql -h hostname -p port -U username databasename
+```
+
+- Create database:
+
+```
+CREATE DATABASE __database_name__;
+```
 
 _Text_
 
