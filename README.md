@@ -5,8 +5,8 @@ Amigoscode's PostgreSQL tutorial notes
 ## Contents
 
 - [Create commands](#Create-commands)
-- [Placeholder20](#Placeholder20)
-  - [Placeholder21](#Placeholder21)
+- [Database Management Tool](#Database-Management-Tool)
+  - [Adminer](#Adminer)
 - [References](#References)
 
 ## Create commands
@@ -29,9 +29,19 @@ CREATE DATABASE __database_name__;
 DROP DATABASE __database_name__;
 ```
 
-### Placeholder11
+## Database Management Tool
 
-Placeholder test...
+### Adminer
+
+Open Adminer (http://localhost:8080). Then complete the form :
+```
+“System” : select “PostgresSQL” ;
+“Server” : type “dbPostgres” ; # i.e. service name from docker-compose.yml
+“Username” : type “postgres” ;
+“Password” : type “postgres” ;
+“Database” : type “postgres” ;
+Click “login” button.
+```
 
 ## Placeholder20
 
@@ -43,4 +53,4 @@ Placeholder test...
 
 ## References
 
-[1. source](link)
+[1. Source A.](link)
