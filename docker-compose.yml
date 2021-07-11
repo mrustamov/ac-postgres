@@ -1,0 +1,18 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    env_file:
+        - database.env # configure postgres
+    volumes:
+        - /mnt/d/db/postgres/:/var/lib/postgresql/data/ # persist data even if container shuts down
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
