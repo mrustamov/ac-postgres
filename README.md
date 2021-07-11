@@ -4,12 +4,12 @@ Amigoscode's PostgreSQL tutorial notes
 
 ## Contents
 
-- [Create commands](#Create-commands)
+- [Getting started with PostgreSQL](#Getting-started-with-PostgreSQL)
 - [Database Management Tool](#Database-Management-Tool)
   - [Adminer](#Adminer)
 - [References](#References)
 
-## Create commands
+## Getting started with PostgreSQL
 
 - Connect to database server using psql command
 
