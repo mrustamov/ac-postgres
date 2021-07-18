@@ -41,15 +41,20 @@ CREATE TABLE table_name(
   Column name + data type + constraints if any
 )
 
-e.g.: 
+e.g. with constraints: 
 
 CREATE TABLE person(
-  id int, 
-  first_name VARCHAR(50),
-  last_name VARCHAR(50),
-  gender VARCHAR(6),
-  data_of_birth DATE
+  id BIGSERIAL NOT NULL PRIMARY KEY, 
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  gender VARCHAR(6) NOT NULL,
+  data_of_birth DATE NOT NULL,
+  email VARCHAR(150)
 );
+```
+- Delete Table:
+```
+DROP TABLE table_name;
 ```
 
 - [Data types](https://www.postgresql.org/docs/13/datatype.html) in PostgreSQL.
