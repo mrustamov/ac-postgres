@@ -112,7 +112,10 @@ select * from person WHERE column_name='CLAUSE/String';   # WHERE CLAUSE and AND
 select * from person WHERE column_name='CLAUSE1' AND column_name2='CLAUSE2';   # WHERE CLAUSE and AND
 select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR column_name3='CLAUSE3');   # WHERE CLAUSE and AND
 
+
+SELECT 1 > 1 OR 1 >= 1 OR 1 <> 1 OR 1 <= 1 OR 'ONE'='TWO' # COMPARISON OPERATIONS
 ```
+
 
 ## Database Management Tool
 
