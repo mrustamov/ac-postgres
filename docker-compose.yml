@@ -9,7 +9,7 @@ services:
     env_file:
         - database.env # configure postgres
     volumes:
-        - /d/db/postgres:/var/lib/postgresql/data # persist data even if container shuts down
+        - D:\db\postgres\amigoscode:/var/lib/postgresql/data # persist data even if container shuts down
     ports:
         - "5432:5432"
 
