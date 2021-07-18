@@ -61,19 +61,20 @@ DROP TABLE table_name;
 
 - psql command-line interface commands:
 ```
-  \copyright        for distribution terms
-  \h                for help with SQL commands
-  \?                for help with psql commands
-  \g                or terminate with semicolon to execute query
-  \q                to quit
+  \copyright                    for distribution terms
+  \h                            for help with SQL commands
+  \?                            for help with psql commands
+  \g                            or terminate with semicolon to execute query
+  \q                            to quit
 
   Most common commands: 
 
-  \l                list of databases
-  \d                list of relations
-  \dt               list of (only) tables
-  \t                Tuples only (e.g. table headers etc.) is off/on.
-  \c databasename   Connect to database
+  \l                            list of databases
+  \d                            list of relations
+  \dt                           list of (only) tables
+  \t                            Tuples only (e.g. table headers etc.) is off/on.
+  \c databasename               Connect to database
+  \i /path/to/filename.sql      Execute command from file
 ```
 
 - Insert records into tables:
@@ -129,4 +130,4 @@ Placeholder test...
 
 ## References
 
-[1. Source A.](link)
+[1. Mockaroo - Data generation tool.](https://www.mockaroo.com/)
