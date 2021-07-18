@@ -48,7 +48,7 @@ CREATE TABLE person(
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   gender VARCHAR(6) NOT NULL,
-  data_of_birth DATE NOT NULL,
+  date_of_birth DATE NOT NULL,
   email VARCHAR(150)
 );
 ```
@@ -67,6 +67,18 @@ DROP TABLE table_name;
   \g            or terminate with semicolon to execute query
   \q            to quit
 ```
+
+- Insert records into tables:
+```
+INSERT INTO person(
+  first_name,
+  last_name,
+  gender,
+  date_of_birth
+)
+VALUES('Anne', 'Smith', 'FEMALE', DATE '2000-01-01')
+```
+
 
 ## Database Management Tool
 
