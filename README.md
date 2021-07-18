@@ -95,6 +95,19 @@ INSERT INTO person(
 VALUES('Anne', 'Smith', 'FEMALE', DATE '2000-01-01');
 ```
 
+- Read and manipulate data:
+```
+Select * from table_name;   # SELECT FROM 
+Select columnt_name from table_name;   # SELECT FROM 
+
+
+Select * from table_name ORDER BY column_name;   # ORDER BY (default: ASC)
+Select * from table_name ORDER BY column_name DESC;   # ORDER BY
+
+
+Select DISCTINCT column_name from table_name ORDER BY column_name;   # DISCTINCT
+
+```
 
 ## Database Management Tool
 
