@@ -17,7 +17,7 @@ Amigoscode's PostgreSQL tutorial notes
 ```
 psql -h hostname -p port -U username databasename
 ```
-- Open the psql command-line tool, e.g. inside the postgres docker container:
+- Open psql, the command-line interface to PostgreSQL, e.g. inside the postgres docker container:
 
 ```
 psql -U username
@@ -36,8 +36,6 @@ DROP DATABASE __database_name__;
 ```
 - Create Table:
 
-[Data types](https://www.postgresql.org/docs/13/datatype.html) in PostgreSQL.
-
 ```
 CREATE TABLE table_name(
   Column name + data type + constraints if any
@@ -45,13 +43,24 @@ CREATE TABLE table_name(
 
 e.g.: 
 
-CREATE TABLE table_name(
+CREATE TABLE person(
   id int, 
   first_name VARCHAR(50),
   last_name VARCHAR(50),
   gender VARCHAR(6),
-  data_of_birth TIMESTAMP,
-)
+  data_of_birth DATE
+);
+```
+
+- [Data types](https://www.postgresql.org/docs/13/datatype.html) in PostgreSQL.
+
+- psql command-line interface commands:
+```
+  \copyright    for distribution terms
+  \h            for help with SQL commands
+  \?            for help with psql commands
+  \g            or terminate with semicolon to execute query
+  \q            to quit
 ```
 
 ## Database Management Tool
