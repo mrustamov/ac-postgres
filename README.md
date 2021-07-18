@@ -70,13 +70,20 @@ DROP TABLE table_name;
 
 - Insert records into tables:
 ```
+INSERT INTO table_name(
+  column_name
+)
+VALUES('value');
+
+e.g.: 
+
 INSERT INTO person(
   first_name,
   last_name,
   gender,
   date_of_birth
 )
-VALUES('Anne', 'Smith', 'FEMALE', DATE '2000-01-01')
+VALUES('Anne', 'Smith', 'FEMALE', DATE '2000-01-01');
 ```
 
 
