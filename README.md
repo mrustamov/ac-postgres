@@ -116,7 +116,6 @@ select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR 
 SELECT 1 > 1 OR 1 >= 1 OR 1 <> 1 OR 1 <= 1 OR 'ONE'='TWO' # COMPARISON OPERATIONS
 ```
 
-
 ## Database Management Tool
 
 ### Adminer
