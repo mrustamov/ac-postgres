@@ -107,6 +107,11 @@ Select * from table_name ORDER BY column_name DESC;   # ORDER BY
 
 Select DISCTINCT column_name from table_name ORDER BY column_name;   # DISCTINCT
 
+
+select * from person WHERE column_name='CLAUSE/String';   # WHERE CLAUSE and AND
+select * from person WHERE column_name='CLAUSE1' AND column_name2='CLAUSE2';   # WHERE CLAUSE and AND
+select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR column_name3='CLAUSE3');   # WHERE CLAUSE and AND
+
 ```
 
 ## Database Management Tool
