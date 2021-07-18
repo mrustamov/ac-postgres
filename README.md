@@ -70,7 +70,8 @@ DROP TABLE table_name;
   Most common commands: 
 
   \l                list of databases
-  \d                list of all tables
+  \d                list of relations
+  \dt               list of (only) tables
   \t                Tuples only (e.g. table headers etc.) is off/on.
   \c databasename   Connect to database
 ```
