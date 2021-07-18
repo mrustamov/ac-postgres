@@ -61,11 +61,18 @@ DROP TABLE table_name;
 
 - psql command-line interface commands:
 ```
-  \copyright    for distribution terms
-  \h            for help with SQL commands
-  \?            for help with psql commands
-  \g            or terminate with semicolon to execute query
-  \q            to quit
+  \copyright        for distribution terms
+  \h                for help with SQL commands
+  \?                for help with psql commands
+  \g                or terminate with semicolon to execute query
+  \q                to quit
+
+  Most common commands: 
+
+  \l                list of databases
+  \d                list of all tables
+  \t                Tuples only (e.g. table headers etc.) is off/on.
+  \c databasename   Connect to database
 ```
 
 - Insert records into tables:
