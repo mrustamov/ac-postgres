@@ -115,6 +115,17 @@ select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR 
 
 SELECT 1 > 1 OR 1 >= 1 OR 1 <> 1 OR 1 <= 1 OR 'ONE'='TWO' # COMPARISON OPERATIONS
 ```
+- Limit, Offset & Fetch:
+```
+SELECT * FROM table_name LIMIT 10;                              # select first 10 entries
+
+
+SELECT * FROM table_name OFFSET 5;                              # select entries after 5th entry
+SELECT * FROM table_name OFFSET 5 LIMIT 10;                     # select first 10 entries after 5th entry
+
+
+SELECT * FROM table_name OFFSET 5 FETCH FIRST 10 ROW ONLY;      # select first 10 entries after 5th entry. Similar to limit but FETCH is SQL standard query command
+```
 
 ## Database Management Tool
 
