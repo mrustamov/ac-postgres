@@ -127,6 +127,19 @@ SELECT * FROM table_name OFFSET 5 LIMIT 10;                     # select first 1
 SELECT * FROM table_name OFFSET 5 FETCH FIRST 10 ROW ONLY;      # select first 10 entries after 5th entry. Similar to limit but FETCH is SQL standard query command
 ```
 
+- IN - used to define a quantity or an array of values to be matched: 
+```
+SELECT * FROM table_name WHERE column_name IN ('String1', 'String2'); # Or equivalent of query with OR: 'SELECT * FROM table_name where culumn_name='String1' OR culumn_name='String2''
+```
+
+- BETWEEN - used to define a range:
+```
+SELECT * FROM table_name WHERE column_name BETWEEN DATE 'value_from' AND 'value_until';
+
+e.g.:
+SELECT * FROM PERSON WHERE date_of_birth BETWEEN DATE '2000-01-01' AND '2020-10-30';
+```
+
 ## Database Management Tool
 
 ### Adminer
