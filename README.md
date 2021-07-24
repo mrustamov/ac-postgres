@@ -150,6 +150,21 @@ SELECT * FROM PERSON WHERE email LIKE '%bloomberg.com';
 SELECT * FROM PERSON WHERE email LIKE '_____.com'; # _ - matches one any character
 ```
 
+- GROUP BY - used to group data based on column.
+```
+SELECT column_name1, aggregate_function (column2) FROM table_name GROUP BY column_name1;
+
+e.g.: 
+SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth ORDER BY country_of_birth; # Counts how many entries have value e.g. Germany in column country_of_birth, i.e. how many person from Germany.
+
+         country_of_birth         | count
+----------------------------------+-------
+ Angola                           |     1
+ Anguilla                         |     1
+ Argentina                        |    21
+ Armenia                          |     5
+ Azerbaijan                       |     4
+```
 ## Database Management Tool
 
 ### Adminer
