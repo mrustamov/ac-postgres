@@ -14,34 +14,34 @@ Amigoscode's PostgreSQL tutorial notes
 
 - Connect to database server using psql command
 
-```
+```sh
 psql -h hostname -p port -U username databasename
 ```
 - Open psql, the command-line interface to PostgreSQL, e.g. inside the postgres docker container:
 
-```
+```sh
 psql -U username
 ```
 
 - Create database:
 
-```
+```sql
 CREATE DATABASE __database_name__;
 ```
 
 - Delete database:
 
-```
+```sql
 DROP DATABASE __database_name__;
 ```
 - Create Table:
 
-```
+```sql
 CREATE TABLE table_name(
   Column name + data type + constraints if any
 )
 
-e.g. with constraints: 
+-- e.g. with constraints: 
 
 CREATE TABLE person(
   id BIGSERIAL NOT NULL PRIMARY KEY, 
@@ -53,14 +53,14 @@ CREATE TABLE person(
 );
 ```
 - Delete Table:
-```
+```sql
 DROP TABLE table_name;
 ```
 
 - [Data types](https://www.postgresql.org/docs/13/datatype.html) in PostgreSQL.
 
 - psql command-line interface commands:
-```
+```sh
   \copyright                    for distribution terms
   \h                            for help with SQL commands
   \?                            for help with psql commands
@@ -78,13 +78,13 @@ DROP TABLE table_name;
 ```
 
 - Insert records into tables:
-```
+```sql
 INSERT INTO table_name(
   column_name
 )
 VALUES('value');
 
-e.g.: 
+-- e.g.: 
 
 INSERT INTO person(
   first_name,
@@ -96,44 +96,44 @@ VALUES('Anne', 'Smith', 'FEMALE', DATE '2000-01-01');
 ```
 
 - Read and manipulate data:
-```
-Select * from table_name;   # SELECT FROM 
-Select columnt_name from table_name;   # SELECT FROM 
+```sql
+Select * from table_name;   -- SELECT FROM 
+Select columnt_name from table_name;   -- SELECT FROM 
 
 
-Select * from table_name ORDER BY column_name;   # ORDER BY (default: ASC)
-Select * from table_name ORDER BY column_name DESC;   # ORDER BY
+Select * from table_name ORDER BY column_name;   -- ORDER BY (default: ASC)
+Select * from table_name ORDER BY column_name DESC;   -- ORDER BY
 
 
-Select DISCTINCT column_name from table_name ORDER BY column_name;   # DISCTINCT
+Select DISCTINCT column_name from table_name ORDER BY column_name;   -- DISCTINCT
 
 
-select * from person WHERE column_name='CLAUSE/String';   # WHERE CLAUSE and AND
-select * from person WHERE column_name='CLAUSE1' AND column_name2='CLAUSE2';   # WHERE CLAUSE and AND
-select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR column_name3='CLAUSE3');   # WHERE CLAUSE and AND
+select * from person WHERE column_name='CLAUSE/String';   -- WHERE CLAUSE and AND
+select * from person WHERE column_name='CLAUSE1' AND column_name2='CLAUSE2';   -- WHERE CLAUSE and AND
+select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR column_name3='CLAUSE3');   -- WHERE CLAUSE and AND
 
 
-SELECT 1 > 1 OR 1 >= 1 OR 1 <> 1 OR 1 <= 1 OR 'ONE'='TWO' # COMPARISON OPERATIONS
+SELECT 1 > 1 OR 1 >= 1 OR 1 <> 1 OR 1 <= 1 OR 'ONE'='TWO' -- COMPARISON OPERATIONS
 ```
 - Limit, Offset & Fetch:
-```
-SELECT * FROM table_name LIMIT 10;                              # select first 10 entries
+```sql
+SELECT * FROM table_name LIMIT 10;                              -- select first 10 entries
 
 
-SELECT * FROM table_name OFFSET 5;                              # select entries after 5th entry
-SELECT * FROM table_name OFFSET 5 LIMIT 10;                     # select first 10 entries after 5th entry
+SELECT * FROM table_name OFFSET 5;                              -- select entries after 5th entry
+SELECT * FROM table_name OFFSET 5 LIMIT 10;                     -- select first 10 entries after 5th entry
 
 
-SELECT * FROM table_name OFFSET 5 FETCH FIRST 10 ROW ONLY;      # select first 10 entries after 5th entry. Similar to limit but FETCH is SQL standard query command
+SELECT * FROM table_name OFFSET 5 FETCH FIRST 10 ROW ONLY;      -- select first 10 entries after 5th entry. Similar to limit but FETCH is SQL standard query command
 ```
 
 - IN - used to define a quantity or an array of values to be matched: 
-```
-SELECT * FROM table_name WHERE column_name IN ('String1', 'String2'); # Or equivalent of query with OR: 'SELECT * FROM table_name where culumn_name='String1' OR culumn_name='String2''
+```sql
+SELECT * FROM table_name WHERE column_name IN ('String1', 'String2'); -- Or equivalent of query with OR: 'SELECT * FROM table_name where culumn_name='String1' OR culumn_name='String2''
 ```
 
 - BETWEEN - used to define a range:
-```
+```sql
 SELECT * FROM table_name WHERE column_name BETWEEN DATE 'value_from' AND 'value_until';
 
 e.g.:
@@ -141,29 +141,29 @@ SELECT * FROM PERSON WHERE date_of_birth BETWEEN DATE '2000-01-01' AND '2020-10-
 ```
 
 - LIKE and iLIKE - used to match text values against patterns using wildcards:
-```
+```sql
 SELECT * FROM table_name WHERE culumn_name [NOT] LIKE 'pattern'; 
-SELECT * FROM table_name WHERE culumn_name [NOT] ILIKE 'pattern';  # ILIKE - case insensitive
+SELECT * FROM table_name WHERE culumn_name [NOT] ILIKE 'pattern';  -- ILIKE - case insensitive
 
 e.g.: 
 SELECT * FROM PERSON WHERE email LIKE '%bloomberg.com';
-SELECT * FROM PERSON WHERE email LIKE '_____.com'; # _ - matches one any character
+SELECT * FROM PERSON WHERE email LIKE '_____.com'; -- _ - matches one any character
 ```
 
 - GROUP BY - used to group data based on column.
-```
+```sql
 SELECT column_name1, aggregate_function (column2) FROM table_name GROUP BY column_name1;
 
 e.g.: 
-SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth ORDER BY country_of_birth; # Counts how many entries have value e.g. Germany in column country_of_birth, i.e. how many person from Germany.
+SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth ORDER BY country_of_birth; -- Counts how many entries have value e.g. Germany in column country_of_birth, i.e. how many person from Germany.
 
-         country_of_birth         | count
-----------------------------------+-------
- Angola                           |     1
- Anguilla                         |     1
- Argentina                        |    21
- Armenia                          |     5
- Azerbaijan                       |     4
+--         country_of_birth         | count
+------------------------------------+-------
+-- Angola                           |     1
+-- Anguilla                         |     1
+-- Argentina                        |    21
+-- Armenia                          |     5
+-- Azerbaijan                       |     4
 ```
 ## Database Management Tool
 
@@ -182,14 +182,14 @@ Click “login” button.
 ## PostgreSQL Server
 
 Start/Stop postgres server as docker container using properties defined in docker-compose.yml
-```
+```sh
 docker compose up -d
 docker compose down
 ```
 
 Start postgres commind-line inside a docker container:
 
-```
+```sh
 docker exec -ti $(docker ps -a | grep db | awk '{ print $1 }') psql -U postgres
 ```
 
