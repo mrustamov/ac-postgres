@@ -140,6 +140,16 @@ e.g.:
 SELECT * FROM PERSON WHERE date_of_birth BETWEEN DATE '2000-01-01' AND '2020-10-30';
 ```
 
+- LIKE and iLIKE - used to match text values against patterns using wildcards:
+```
+SELECT * FROM table_name WHERE culumn_name [NOT] LIKE 'pattern'; 
+SELECT * FROM table_name WHERE culumn_name [NOT] ILIKE 'pattern';  # ILIKE - case insensitive
+
+e.g.: 
+SELECT * FROM PERSON WHERE email LIKE '%bloomberg.com';
+SELECT * FROM PERSON WHERE email LIKE '_____.com'; # _ - matches one any character
+```
+
 ## Database Management Tool
 
 ### Adminer
