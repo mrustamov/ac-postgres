@@ -95,19 +95,33 @@ INSERT INTO person(
 VALUES('Anne', 'Smith', 'FEMALE', DATE '2000-01-01');
 ```
 
-- Read and manipulate data:
+- SELECT:
 ```sql
 Select * from table_name;   -- SELECT FROM 
 Select columnt_name from table_name;   -- SELECT FROM 
+Select columnt_name1 || ' ' || column_name2 from table_name;   -- SELECT with concatenation operator '||'. 
 
+SELECT column_name AS alias_name FROM table_name; -- Column aliases
+-- e.g.:
+SELECT first_name || ' ' || last_name "full name" FROM person;
+```
 
-Select * from table_name ORDER BY column_name;   -- ORDER BY (default: ASC)
-Select * from table_name ORDER BY column_name DESC;   -- ORDER BY
+- ORDER BY:
+```sql
+SELECT select_list FROM table_name ORDER BY	sort_expression1 [ASC | DESC], ... sort_expressionN [ASC | DESC];
 
+-- e.g.:
+SELECT  first_name, LENGTH(first_name) AS len FROM person ORDER BY len DESC;
 
+```
+
+- DISTINCT:
+```sql
 Select DISCTINCT column_name from table_name ORDER BY column_name;   -- DISCTINCT
+```
 
-
+- WHERE CLAUSE and AND
+```sql
 select * from person WHERE column_name='CLAUSE/String';   -- WHERE CLAUSE and AND
 select * from person WHERE column_name='CLAUSE1' AND column_name2='CLAUSE2';   -- WHERE CLAUSE and AND
 select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR column_name3='CLAUSE3');   -- WHERE CLAUSE and AND
@@ -115,7 +129,9 @@ select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR 
 
 SELECT 1 > 1 OR 1 >= 1 OR 1 <> 1 OR 1 <= 1 OR 'ONE'='TWO' -- COMPARISON OPERATIONS
 ```
-- Limit, Offset & Fetch:
+
+- LIMIT, OFFSET & FETCH:
+
 ```sql
 SELECT * FROM table_name LIMIT 10;                              -- select first 10 entries
 
