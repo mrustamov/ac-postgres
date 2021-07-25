@@ -54,7 +54,8 @@ CREATE TABLE person(
   email VARCHAR(150)
 );
 ```
-- Delete Table:
+#### Delete Table:
+
 ```sql
 DROP TABLE table_name;
 ```
