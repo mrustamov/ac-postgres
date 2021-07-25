@@ -112,6 +112,7 @@ SELECT select_list FROM table_name ORDER BY	sort_expression1 [ASC | DESC], ... s
 
 -- e.g.:
 SELECT  first_name, LENGTH(first_name) AS len FROM person ORDER BY len DESC;
+SELECT  first_name FROM person ORDER BY len DESC;
 
 ```
 
