@@ -190,8 +190,41 @@ SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth ORDER BY
 ## Joining Multiple Tables
 
 PostgreSQL joins including inner join, left join, right join, and full outer join.
+```sql
+ a | fruit_a
+---+----------
+ 1 | Apple
+ 2 | Orange
+ 3 | Banana
+ 4 | Cucumber
+(4 rows)
 
+ b |  fruit_b
+---+------------
+ 1 | Orange
+ 2 | Apple
+ 3 | Watermelon
+ 4 | Pear
+(4 rows)
+```
 ### Joins
+
+#### Inner join
+```sql
+SELECT
+    a,
+    fruit_a,
+    b,
+    fruit_b
+FROM
+    basket_a
+INNER JOIN basket_b
+    ON fruit_a = fruit_b;
+```
+
+#### All the PostgreSQL joins:
+
+![All the PostgreSQL joins](https://www.postgresqltutorial.com/wp-content/uploads/2018/12/PostgreSQL-Joins.png)
 
 
 ## Database Management Tool
