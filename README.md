@@ -5,6 +5,8 @@ Amigoscode's PostgreSQL tutorial notes
 ## Contents
 
 - [Getting started with PostgreSQL](#Getting-started-with-PostgreSQL)
+- [Joining Multiple Tables](#Joining-Multiple-Tables)
+  - [Joins](#Joins)
 - [Database Management Tool](#Database-Management-Tool)
   - [Adminer](#Adminer)
 - [PostgreSQL Server](#PostgreSQL-Server)
@@ -112,7 +114,7 @@ SELECT select_list FROM table_name ORDER BY	sort_expression1 [ASC | DESC], ... s
 
 -- e.g.:
 SELECT  first_name, LENGTH(first_name) AS len FROM person ORDER BY len DESC;
-SELECT  first_name FROM person ORDER BY len DESC;
+SELECT  first_name FROM person ORDER BY first_name DESC NULLS LAST;
 
 ```
 
@@ -129,6 +131,7 @@ select * from person WHERE column_name='CLAUSE1' AND (column_name2='CLAUSE2' OR 
 
 
 SELECT 1 > 1 OR 1 >= 1 OR 1 <> 1 OR 1 <= 1 OR 'ONE'='TWO' -- COMPARISON OPERATIONS
+SELECT column_name IS NOT NULL;
 ```
 
 - LIMIT, OFFSET & FETCH:
@@ -182,6 +185,15 @@ SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth ORDER BY
 -- Armenia                          |     5
 -- Azerbaijan                       |     4
 ```
+
+
+## Joining Multiple Tables
+
+PostgreSQL joins including inner join, left join, right join, and full outer join.
+
+### Joins
+
+
 ## Database Management Tool
 
 ### Adminer
