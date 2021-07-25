@@ -14,29 +14,29 @@ Amigoscode's PostgreSQL tutorial notes
 
 ## Getting started with PostgreSQL
 
-- Connect to database server using psql command
+#### Connect to database server using psql command
 
 ```sh
 psql -h hostname -p port -U username databasename
 ```
-- Open psql, the command-line interface to PostgreSQL, e.g. inside the postgres docker container:
+#### Open psql, the command-line interface to PostgreSQL, e.g. inside the postgres docker container:
 
 ```sh
 psql -U username
 ```
 
-- Create database:
+#### Create database:
 
 ```sql
 CREATE DATABASE __database_name__;
 ```
 
-- Delete database:
+#### Delete database:
 
 ```sql
 DROP DATABASE __database_name__;
 ```
-- Create Table:
+#### Create Table:
 
 ```sql
 CREATE TABLE table_name(
@@ -59,9 +59,10 @@ CREATE TABLE person(
 DROP TABLE table_name;
 ```
 
-- [Data types](https://www.postgresql.org/docs/13/datatype.html) in PostgreSQL.
+#### [Data types](https://www.postgresql.org/docs/13/datatype.html) in PostgreSQL.
 
-- psql command-line interface commands:
+#### psql command-line interface commands:
+
 ```sh
   \copyright                    for distribution terms
   \h                            for help with SQL commands
@@ -79,7 +80,8 @@ DROP TABLE table_name;
   \i /path/to/filename.sql      Execute command from file
 ```
 
-- Insert records into tables:
+#### Insert records into tables:
+
 ```sql
 INSERT INTO table_name(
   column_name
@@ -97,7 +99,8 @@ INSERT INTO person(
 VALUES('Anne', 'Smith', 'FEMALE', DATE '2000-01-01');
 ```
 
-- SELECT:
+#### SELECT:
+
 ```sql
 Select * from table_name;   -- SELECT FROM 
 Select columnt_name from table_name;   -- SELECT FROM 
@@ -108,7 +111,8 @@ SELECT column_name AS alias_name FROM table_name; -- Column aliases
 SELECT first_name || ' ' || last_name "full name" FROM person;
 ```
 
-- ORDER BY:
+#### ORDER BY:
+
 ```sql
 SELECT select_list FROM table_name ORDER BY	sort_expression1 [ASC | DESC], ... sort_expressionN [ASC | DESC];
 
@@ -118,12 +122,14 @@ SELECT  first_name FROM person ORDER BY first_name DESC NULLS LAST;
 
 ```
 
-- DISTINCT:
+#### DISTINCT:
+
 ```sql
 Select DISCTINCT column_name from table_name ORDER BY column_name;   -- DISCTINCT
 ```
 
-- WHERE CLAUSE and AND
+#### WHERE CLAUSE and AND
+
 ```sql
 select * from person WHERE column_name='CLAUSE/String';   -- WHERE CLAUSE and AND
 select * from person WHERE column_name='CLAUSE1' AND column_name2='CLAUSE2';   -- WHERE CLAUSE and AND
@@ -134,7 +140,7 @@ SELECT 1 > 1 OR 1 >= 1 OR 1 <> 1 OR 1 <= 1 OR 'ONE'='TWO' -- COMPARISON OPERATIO
 SELECT column_name IS NOT NULL;
 ```
 
-- LIMIT, OFFSET & FETCH:
+#### LIMIT, OFFSET & FETCH:
 
 ```sql
 SELECT * FROM table_name LIMIT 10;                              -- select first 10 entries
@@ -147,12 +153,14 @@ SELECT * FROM table_name OFFSET 5 LIMIT 10;                     -- select first 
 SELECT * FROM table_name OFFSET 5 FETCH FIRST 10 ROW ONLY;      -- select first 10 entries after 5th entry. Similar to limit but FETCH is SQL standard query command
 ```
 
-- IN - used to define a quantity or an array of values to be matched: 
+#### IN - used to define a quantity or an array of values to be matched: 
+
 ```sql
 SELECT * FROM table_name WHERE column_name IN ('String1', 'String2'); -- Or equivalent of query with OR: 'SELECT * FROM table_name where culumn_name='String1' OR culumn_name='String2''
 ```
 
-- BETWEEN - used to define a range:
+#### BETWEEN - used to define a range:
+
 ```sql
 SELECT * FROM table_name WHERE column_name BETWEEN DATE 'value_from' AND 'value_until';
 
@@ -160,7 +168,8 @@ e.g.:
 SELECT * FROM PERSON WHERE date_of_birth BETWEEN DATE '2000-01-01' AND '2020-10-30';
 ```
 
-- LIKE and iLIKE - used to match text values against patterns using wildcards:
+#### LIKE and iLIKE - used to match text values against patterns using wildcards:
+
 ```sql
 SELECT * FROM table_name WHERE culumn_name [NOT] LIKE 'pattern'; 
 SELECT * FROM table_name WHERE culumn_name [NOT] ILIKE 'pattern';  -- ILIKE - case insensitive
@@ -170,7 +179,8 @@ SELECT * FROM PERSON WHERE email LIKE '%bloomberg.com';
 SELECT * FROM PERSON WHERE email LIKE '_____.com'; -- _ - matches one any character
 ```
 
-- GROUP BY - used to group data based on column.
+#### GROUP BY - used to group data based on column.
+
 ```sql
 SELECT column_name1, aggregate_function (column2) FROM table_name GROUP BY column_name1;
 
@@ -190,6 +200,7 @@ SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth ORDER BY
 ## Joining Multiple Tables
 
 PostgreSQL joins including inner join, left join, right join, and full outer join.
+Tables to be used in example below:
 ```sql
  a | fruit_a
 ---+----------
@@ -210,6 +221,7 @@ PostgreSQL joins including inner join, left join, right join, and full outer joi
 ### Joins
 
 #### Inner join
+
 ```sql
 SELECT
     a,
