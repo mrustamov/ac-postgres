@@ -197,6 +197,14 @@ SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth ORDER BY
 -- Azerbaijan                       |     4
 ```
 
+#### GROUP BY HAVING - HAVING used with GROUP BY for filtering data.
+
+```sql
+SELECT column_name1, aggregate_function (column2) FROM table_name GROUP BY column_name1 HAVING function ORDER BY column_name; -- ORDER BY must come after HAVING
+
+e.g.:
+SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth HAVING COUNT(*) > 5 ORDER BY country_of_birth; -- Counts how many entries have value e.g. Germany in column country_of_birth, i.e. how many person from Germany and filters entries bigger than 5.
+```
 
 ## Joining Multiple Tables
 
