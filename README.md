@@ -282,4 +282,5 @@ Placeholder test...
 
 ## References
 
-[1. Mockaroo - Data generation tool.](https://www.mockaroo.com/)
+[1. Mockaroo - Data generation tool.](https://www.mockaroo.com/) <br>
+[2. Aggregate Functions.](https://www.postgresql.org/docs/current/functions-aggregate.html)
