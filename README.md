@@ -206,6 +206,18 @@ e.g.:
 SELECT country_of_birth, COUNT(*) FROM PERSON GROUP BY country_of_birth HAVING COUNT(*) > 5 ORDER BY country_of_birth; -- Counts how many entries have value e.g. Germany in column country_of_birth, i.e. how many person from Germany and filters entries bigger than 5.
 ```
 
+#### Aggregate Functions
+```sql
+SELECT aggregate_function FROM table_name;
+
+
+e.g.:
+SELECT MIN(price) FROM car;
+SELECT AVG(price) FROM car;
+SELECT make, MIN(price) AS min_price FROM car GROUP BY make ORDER BY min_price ASC;
+
+```
+
 ## Joining Multiple Tables
 
 PostgreSQL joins including inner join, left join, right join, and full outer join.
